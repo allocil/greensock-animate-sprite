@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Greensock</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	<style>/*
+		* {
+			margin: 0;
+			background-color: #F0F0F0;  
+		}
+		
+		#bat {
+			position: absolute;
+			width: 120px;
+			height: 140px;
+			left: 0;
+			top:0;
+			margin-left: 0px;
+			margin-top: 0px;
+			opacity:1;				
+			background:url('img/bat2.png') 0px 0px;
+			background-repeat:no-repeat;
+		}*/
+		#container{
+			/*overflow:hidden;*/
+			position: relative;
+			top:0;
+			height: 500px;			
+		}
+		
+		body{
+			background-color: gray;
+		}
+	</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>    
+	<div id="container" class="container-fluid">
+		<!--<div id ="bat" ></div>-->
+	</div>	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->    
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	
+	<script src="js/halloween-me.js"></script>
+	<script>
+		//BAT
+		//$("#container").halloweenme();
+		//GHOST
+		/*$("#container").halloweenme({
+			image:"img/ghost.png", 
+			imageWidth: "32px",
+			imageHeight: "50px",            
+			array: ["0px 0px", "-32px 0px", "-64px 0px", 
+					"0px -50px", "-32px -50px", "-64px -50px",
+					"0px -100px", "-32px -100px", "-64px -100px",
+					"0px -150px", "-32px -150px", "-64px -150px"],
+			speed: 10,
+			rotateSpeed: 2
+		});*/
+		//CAT
+		$("#container").halloweenme({
+			image:"img/bcat2.png", 
+			imageWidth: "400px",
+			imageHeight: "200px",            
+			array: ["0px 0px", 
+					"0px -200px", 
+					"0px -400px", 
+					"0px -600px",
+					"0px -800px",
+					"0px -1000px",
+					"0px -1200px",
+					"0px -1400px",
+					"0px -1600px",
+					"0px -1800px",
+					"0px -2000px",
+					"0px -2200px"
+					],
+			speed: 3,
+			repeatDelay: 5,
+			rotateSpeed: 0.4
+		});
+		
+
+	</script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>-->
+	<!--<script>	
+	var batObj1 = { counter: 0};
+	var bezierTween;
+	var batArray1 = ["0px 0px", "-120px 0px", "-240px 0px"];
+	
+	var TweenBat = TweenMax.to(batObj1, 0.5, {counter:batArray1.length, repeat:-1, ease:SteppedEase.config(batArray1.length), onUpdate:batTweenUpdate});
+	function batTweenUpdate(){
+		if (batObj1.counter < batArray1.length){
+			TweenMax.to(bat, 0, {backgroundPosition:batArray1[Math.ceil(batObj1.counter)]});
+		}
+	}
+	TweenBat.timeScale(1);
+	TweenBat.play();
+	
+	var w = $(document).width();
+	console.log("width",w);
+	w = w *90/100;
+
+	bezierTween = new TweenMax("#bat", 6, {
+		bezier:{
+			type:"soft", 
+			values:[{x:0, y:0}, {x:150, y:30}, {x:500 + Math.random() *100, y:320*Math.random() + 50}, {x:500, y:320*Math.random() + 50}, {x:700, y:100}, {x:w, y:0}],
+			autoRotate:false
+		},
+		ease:Linear.easeNone, repeat:-1});
+
+	TweenLite.to(bezierTween, 1, {timeScale:1});	
+	</script>-->	
+  </body>
+</html>
